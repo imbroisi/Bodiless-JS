@@ -107,10 +107,12 @@ export const SocialShareBase: FC<SocialShareProps> = ({
   return (
     <SocialShareWrapper {...props}>
       <SocialShareButton buttonContent={buttonContent} onClick={toggleExpanded} />
-      <SocialShareProdviders
-        expanded={expanded}
-        providers={providers}
-      />
+      <div aria-hidden={!expanded}>
+        <SocialShareProdviders
+          expanded={expanded}
+          providers={providers}
+        />
+      </div>
     </SocialShareWrapper>
   );
 };
